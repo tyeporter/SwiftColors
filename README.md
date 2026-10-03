@@ -1,6 +1,6 @@
 # SwiftColors 🎨
 
-A simple color toolkit that provides solid colors from popular design systems for Apple Platforms (iOS, maOS, watchOS, tvOS and visionOS). SwiftColors also provides helpful RGB helpers for `UIColor`, `Color`, and `NSColor`.
+A simple color toolkit that provides solid colors from popular design systems for Apple Platforms (iOS, macOS, watchOS, tvOS and visionOS). SwiftColors also provides helpful RGB helpers for `UIColor`, `Color`, and `NSColor`.
 
 ## Supported Systems
 
