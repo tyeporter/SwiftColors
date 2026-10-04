@@ -1,6 +1,6 @@
 # SwiftColors 🎨
 
-A simple color toolkit that provides solid colors from popular design systems for Apple Platforms (iOS, macOS, watchOS, tvOS and visionOS). SwiftColors also provides helpful RGB helpers for `UIColor`, `Color`, and `NSColor`. 
+A simple color toolkit that provides solid colors from popular design systems for Apple Platforms (iOS, macOS, watchOS, tvOS and visionOS). SwiftColors also provides helpful RGB helpers for `UIColor`, `Color`, and `NSColor`.
 
 > This package is a modern revival of a simple Swift extension I originally wrote back in 2019 to bring Material Design colors into my personal iOS apps. I find myself constantly reaching for colors from popular design systems when prototyping, so I built and shared this toolkit to make them available for anyone who needs them.
 
@@ -73,11 +73,11 @@ view.layer?.backgroundColor = NSColor.twSky800.cgColor
 
 ## Contributing
 
-`SwiftColors` uses a generator script (`Scripts/SwiftColors.swift`) to build the Swift extensions that provide the color tokens.
+`SwiftColors` uses a generator script (`Scripts/SwiftColorsGenerator.swift`) to build the Swift extensions that provide the color tokens.
 
 To add new colors or edit existing colors:
 
-1. Open `Sources/SwiftColors/Colors.json`
+1. Open `Resources/Colors.json`
 2. Add the new token under its respective system using the following format:
 ```json
 {
