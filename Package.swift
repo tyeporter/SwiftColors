@@ -19,6 +19,10 @@ let package = Package(
     targets: [
         .target(
             name: "SwiftColors",
-        )
+        ),
+		.executableTarget(
+			name: "SwiftColorsGenerator",
+			path: "Scripts"
+		)
     ]
 )

@@ -62,7 +62,10 @@ struct SwiftColorPallete: Codable {
 }
 
 @main
-struct SwiftColors {
+struct SwiftColorsGenerator {
+	static let PROJECT_ROOT_DIRECTORY = FileManager.default.currentDirectoryPath
+	static let RESOURCES_DIRECTORY = "\(PROJECT_ROOT_DIRECTORY)/Resources"
+	static let SOURCES_DIRECTORY = "\(PROJECT_ROOT_DIRECTORY)/Sources/SwiftColors"
     static let INPUT_FILE_NAME = "Colors.json"
 
     static func getRGBFileContents(for framework: Framework) -> String {
@@ -129,10 +132,7 @@ struct SwiftColors {
     }
 
     static func generateRGBFile() throws {
-        let fileManager = FileManager.default
-        let currentDirectory = fileManager.currentDirectoryPath
-
-        let outputURL = URL(fileURLWithPath: currentDirectory)
+        let outputURL = URL(fileURLWithPath: SOURCES_DIRECTORY)
             .appendingPathComponent("Color+RGB.swift")
 
         let generatedCode = """
@@ -149,13 +149,11 @@ struct SwiftColors {
         """
         try generatedCode.write(to: outputURL, atomically: true, encoding: .utf8)
 
-        print("✅ Successfully generated RGB file ...")
+        print("✅ Successfully generated RGB file.")
     }
 
     static func generateColorFiles() throws {
-        let fileManager = FileManager.default
-        let currentDirectory = fileManager.currentDirectoryPath
-        let colorsFile = URL(fileURLWithPath: currentDirectory)
+        let colorsFile = URL(fileURLWithPath: RESOURCES_DIRECTORY)
             .appendingPathComponent(INPUT_FILE_NAME)
         let fileData = try Data(contentsOf: colorsFile)
 
@@ -164,7 +162,7 @@ struct SwiftColors {
         let palletes = try decoder.decode([SwiftColorPallete].self, from: fileData)
 
         for pallete in palletes {
-            let outputURL = URL(fileURLWithPath: currentDirectory)
+            let outputURL = URL(fileURLWithPath: SOURCES_DIRECTORY)
                 .appendingPathComponent(pallete.system.colorFileName)
 
             let generatedCode = """
@@ -183,8 +181,7 @@ struct SwiftColors {
             try generatedCode.write(to: outputURL, atomically: true, encoding: .utf8)
         }
 
-        print("✅ Successfully generated color files ...")
-
+        print("✅ Successfully generated color files.")
     }
 
     static func main() {
