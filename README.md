@@ -2,6 +2,7 @@
 
 A simple color toolkit that provides solid colors from popular design systems for Apple Platforms (iOS, macOS, watchOS, tvOS and visionOS). SwiftColors also provides helpful RGB helpers for `UIColor`, `Color`, and `NSColor`.
 
+> [!NOTE]
 > This package is a modern revival of a simple Swift extension I originally wrote back in 2019 to bring Material Design colors into my personal iOS apps. I find myself constantly reaching for colors from popular design systems when prototyping, so I built and shared this toolkit to make them available for anyone who needs them.
 
 ## Supported Systems
