@@ -27,7 +27,7 @@ To add `SwiftColors` to an existing Xcode project:
 For installation with Swift Package Manager, simply add the following to your `Package.swift`:
 
 ```
-.package(url: "https://github.com/tyeporter/SwiftColors.git", from: "1.0.0")
+.package(url: "https://github.com/tyeporter/SwiftColors.git", from: "1.0.2")
 ```
 
 ## Usage
